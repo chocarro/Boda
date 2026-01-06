@@ -509,18 +509,23 @@ html {
 
 /* --- TARJETA RSVP CENTRADA ABAJO --- */
 .card-rsvp {
-    bottom: 52%; /* Posición abajo, encima del footer */
-    left: 75%;
-    transform: translateX(-50%) rotate(-1deg); /* Centrado horizontal */
-    width: 220px;
-    background-color: var(--white);
-    border: 1px solid #eee;
-    padding: 12px;
-    z-index: 100; /* Por encima de las fotos, por debajo del modal */
-    border-radius: 5px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-    
- 
+    position: absolute !important;
+    bottom: 52% !important; /* Tu posición deseada */
+    left: 75% !important;   /* Tu posición deseada */
+    transform: translateX(-50%) rotate(-1deg) !important;
+    width: 200px !important; /* Un poco más estrecho para que no se salga en móviles */
+    background-color: var(--white) !important;
+    border: 1px solid #eee !important;
+    padding: 12px !important;
+    z-index: 1200 !important; /* Aumentado para que esté por encima de la flor y fotos */
+    border-radius: 5px !important;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1) !important;
+}
+
+/* Ajuste para que el texto interno no se corte */
+.rsvp-text {
+    font-size: 0.7rem !important;
+    white-space: nowrap; 
 }
 
 .card-rsvp:active {
