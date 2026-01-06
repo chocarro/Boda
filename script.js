@@ -1,18 +1,36 @@
 const secciones = {
-    'portada': `
+
+       'confirmacion': `
         <div class="modal-header-green">
-            <h1>BIENVENIDOS</h1>
+            <h1>RSVP</h1>
+            <h2>Confirmar</h2>
         </div>
         <div class="modal-body-white">
-            <p>Estamos muy emocionados de compartir este día tan especial con ustedes. Gracias por ser parte de nuestra historia.</p>
+            <p>Tu presencia es nuestro mejor regalo. Por favor, confírmanos tu asistencia antes del <strong>1 de Septiembre, 2026</strong>.</p>
             
-            <div class="countdown-minimal">
-                <span class="countdown-label">FALTAN</span>
-                <div id="timer-modal">
-                    <span id="days">00</span>D : <span id="hours">00</span>H : <span id="minutes">00</span>M
-                </div>
-            </div>
+            <a href="https://wa.me/34600000000?text=¡Hola!%20Confirmo%20con%20mucha%20alegría%20mi%20asistencia%20a%20la%20boda%20de%20Sarah%20%26%20Alistair." 
+               target="_blank" 
+               class="btn-whatsapp-rsvp">
+               ENVIAR WHATSAPP
+            </a>
         </div>`,
+
+   'portada': `
+    <div class="modal-header-green">
+        <h1>BIENVENIDOS</h1>
+    </div>
+    <div class="modal-body-white">
+        <p class="texto-bienvenida-cursivo">
+            Estamos muy emocionados de compartir este día tan especial con ustedes. Gracias por ser parte de nuestra historia.
+        </p>
+        
+        <div class="countdown-minimal">
+            <span class="countdown-label">FALTAN</span>
+            <div id="timer-modal">
+                <span id="days">00</span>D : <span id="hours">00</span>H : <span id="minutes">00</span>M
+            </div>
+        </div>
+    </div>`,
     
     'detalles': `
         <div class="modal-header-green">
@@ -96,3 +114,4 @@ function iniciarReloj() {
     actualizar();
     countdownInterval = setInterval(actualizar, 1000);
 }
+

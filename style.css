@@ -437,3 +437,61 @@ html {
 #timer-modal span {
     font-weight: 600;
 }
+
+/* --- TARJETA RSVP CENTRADA ABAJO --- */
+.card-rsvp {
+    bottom: 52%; /* Posición abajo, encima del footer */
+    left: 75%;
+    transform: translateX(-50%) rotate(-1deg); /* Centrado horizontal */
+    width: 220px;
+    background-color: var(--white);
+    border: 1px solid #eee;
+    padding: 12px;
+    z-index: 100; /* Por encima de las fotos, por debajo del modal */
+    border-radius: 5px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.card-rsvp:active {
+    transform: translateX(-50%) scale(0.95);
+}
+
+.rsvp-label {
+    font-size: 0.6rem;
+    letter-spacing: 3px;
+    color: #999;
+    margin: 0;
+}
+
+.rsvp-text {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    font-size: 0.75rem;
+    color: var(--sage);
+    display: block;
+    margin-top: 4px;
+}
+
+/* --- BOTÓN WHATSAPP DENTRO DEL MODAL --- */
+.btn-whatsapp-rsvp {
+    display: block;
+    background-color: var(--sage);
+    color: white !important;
+    text-decoration: none;
+    padding: 15px;
+    border-radius: 30px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    margin-top: 20px;
+}
+
+.texto-bienvenida-cursivo {
+    font-family: 'Pinyon Script', cursive !important;
+    font-size: 1.8rem !important;
+    
+    line-height: 0.9 !important; 
+    
+    color: var(--dark-text);
+    margin-bottom: 20px;
+    text-align: center;
+}
