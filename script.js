@@ -39,22 +39,27 @@ const secciones = {
         </div>
         <div class="modal-body-white">
             <div class="section-title">ITINERARIO</div>
+            
             <div class="itinerary-item">
                 <strong>17:30 HRS</strong>
                 <p>Ceremonia de Amor en el Jardín Principal</p>
             </div>
+            
             <div class="itinerary-item">
                 <strong>18:30 HRS</strong>
                 <p>Cóctel de Bienvenida y Canapés</p>
             </div>
+            
             <div class="itinerary-item">
                 <strong>20:00 HRS</strong>
                 <p>Banquete, Brindis y ¡A Bailar!</p>
             </div>
 
             <div class="section-title">VIAJE Y ALOJAMIENTO</div>
-            <p>Recomendamos reservar su estancia cerca de la Hacienda San José en Mérida para mayor comodidad.</p>
-            <a href="https://maps.google.com" target="_blank" class="btn-link-modal">VER UBICACIÓN</a>
+            <div class="itinerary-item">
+                <p>Recomendamos reservar su estancia cerca de la Hacienda San José en Mérida para mayor comodidad.</p>
+                <a href="https://maps.google.com" target="_blank" class="btn-link-modal">VER UBICACIÓN</a>
+            </div>
         </div>`,
 
     'dresscode': `
