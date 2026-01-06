@@ -83,7 +83,7 @@ html {
 .card-names {
     top: 8%;
     left: 5%;
-    width: 65%;
+    width: 80%;
     background-color: var(--sage);
     color: var(--white);
     transform: rotate(-3deg);
@@ -93,7 +93,7 @@ html {
 
 .card-names h1 {
     font-size: 3.5rem;
-    margin: 10px 0;
+    margin: 1px 0;
     line-height: 1;
 }
 
