@@ -172,6 +172,61 @@ html {
 .card-rsvp { z-index: 100; }
 .circle-btn { z-index: 999; }
 
+
+/* --- IMAGEN 5: SIEMPRE AL FONDO --- */
+.img-5 {
+    top: 5%;
+    left: 10%;
+    width: 90%;
+    height: auto;
+    z-index: 1 !important; /* El valor más bajo para que sea el fondo */
+    transform: rotate(5deg);
+    opacity: 0.8;
+}
+
+/* --- BOTÓN RSVP: POSICIÓN FIJA Y VISIBLE --- */
+.card-rsvp {
+    position: absolute;
+    bottom: 15%; /* Elevado para que no lo tape el footer ni el círculo */
+    left: 50%;
+    transform: translateX(-50%) rotate(0deg); 
+    width: 220px;
+    background-color: var(--white);
+    padding: 12px;
+    z-index: 100; /* Por encima de la flor y las fotos */
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+    text-align: center;
+}
+
+/* --- AJUSTE PARA EL CÍRCULO DE DETALLES --- */
+.circle-btn {
+    bottom: 18%;
+    right: 5%;
+    width: 120px;
+    height: 120px;
+    z-index: 999; /* Siempre arriba de todo */
+}
+
+/* --- AJUSTE DE OTRAS FOTOS PARA QUE PISEN LA FLOR --- */
+.img-1, .img-2, .img-3, .img-7 {
+    z-index: 5; /* Mayor que la imagen 5 */
+}
+
+/* --- MEDIA QUERY PARA MÓVILES PEQUEÑOS --- */
+@media (max-height: 700px) {
+    .card-rsvp {
+        bottom: 14%;
+        width: 180px;
+        padding: 8px;
+    }
+    .circle-btn {
+        width: 100px;
+        height: 100px;
+        bottom: 16%;
+    }
+}
+
 /* ==========================================================================
    6. CÍRCULO INTERACTIVO (BOTÓN)
    ========================================================================== */
