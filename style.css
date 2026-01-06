@@ -1,0 +1,439 @@
+/* ==========================================================================
+   1. CONFIGURACIÓN BASE Y VARIABLES
+   ========================================================================== */
+:root {
+    --sage: #94a684;
+    --cream: #fdfbf7;
+    --dark-text: #444;
+    --white: #ffffff;
+    --shadow: 10px 10px 25px rgba(0, 0, 0, 0.05);
+}
+
+body,
+html {
+    background-image: url('Imagenes/listas.jpg');
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--cream);
+    font-family: 'Montserrat', sans-serif;
+    overflow: hidden;
+    /* Evita scroll para mantener el efecto collage */
+}
+
+/* ==========================================================================
+   2. TIPOGRAFÍAS ESPECIALES
+   ========================================================================== */
+/* Fuente caligráfica para Nombres y Títulos */
+.card-names h1,
+.card-dress h2,
+.wedding-footer .names,
+.modal-header-green h2 {
+    font-family: 'Pinyon Script', cursive;
+    font-weight: 400;
+    text-transform: none;
+}
+
+/* Títulos estilo itálica elegante */
+.italic-title {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-weight: 400;
+    font-size: 1.5rem;
+    color: var(--dark-text);
+}
+
+/* ==========================================================================
+   3. ESTRUCTURA DEL COLLAGE
+   ========================================================================== */
+.collage-container {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    max-width: 450px;
+    margin: 0 auto;
+}
+
+/* Estilo base para cada pieza del collage */
+.item {
+    position: absolute;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: var(--shadow);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+.item:active {
+    transform: scale(0.98) !important;
+}
+
+/* ==========================================================================
+   4. TARJETAS DE TEXTO (CARDS)
+   ========================================================================== */
+
+/* Card Nombres (Principal) */
+.card-names {
+    top: 8%;
+    left: 5%;
+    width: 65%;
+    background-color: var(--sage);
+    color: var(--white);
+    transform: rotate(-3deg);
+    border-radius: 8px;
+    z-index: 10;
+}
+
+.card-names h1 {
+    font-size: 3.5rem;
+    margin: 10px 0;
+    line-height: 1;
+}
+
+/* Card Dress Code */
+.card-dress {
+    bottom: 12%;
+    left: 5%;
+    width: 50%;
+    background-color: var(--white);
+    border: 1px solid #eee;
+    transform: rotate(-4deg);
+    border-radius: 4px;
+    z-index: 6;
+}
+
+.card-dress h2 {
+    font-size: 2.5rem;
+    margin-bottom: 0;
+    color: var(--sage);
+}
+
+.card-dress p {
+    font-size: 0.8rem;
+    color: #777;
+    margin-top: 5px;
+}
+
+/* ==========================================================================
+   5. TARJETAS DE IMAGEN (POLAROID STYLE)
+   ========================================================================== */
+.img-card img,
+.bg-decoration {
+    object-fit: cover;
+    display: block;
+    mix-blend-mode: multiply;
+    filter: contrast(1.1);
+}
+
+.img-1 {
+    top: 15%;
+    right: 5%;
+    width: 40%;
+    height: 180px;
+    transform: rotate(4deg);
+    z-index: 5;
+}
+
+.img-2 {
+    top: 45%;
+    left: 8%;
+    width: 35%;
+    height: 150px;
+    transform: rotate(-6deg);
+    z-index: 4;
+}
+
+.img-3 {
+    bottom: 25%;
+    right: 12%;
+    width: 45%;
+    height: 160px;
+    transform: rotate(3deg);
+    z-index: 3;
+}
+
+/* ==========================================================================
+   6. CÍRCULO INTERACTIVO (BOTÓN)
+   ========================================================================== */
+.circle-btn {
+    bottom: 15%;
+    right: 5%;
+    width: 150px;
+    height: 150px;
+    background-color: var(--sage);
+    color: var(--white);
+    border-radius: 50%;
+    font-size: 0.8rem;
+    line-height: 1.4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
+    z-index: 999;
+    /* Siempre arriba de todo */
+    animation: pulse 2s infinite;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgba(148, 166, 132, 0.4);
+    }
+
+    70% {
+        transform: scale(1.08);
+        box-shadow: 0 0 0 15px rgba(148, 166, 132, 0);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* ==========================================================================
+   7. VENTANA MODAL (DETALLES)
+   ========================================================================== */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(4px);
+    z-index: 2000;
+    justify-content: center;
+    align-items: center;
+}
+
+.wedding-page {
+    background: var(--white);
+    width: 90%;
+    max-width: 380px;
+    border-radius: 15px;
+    overflow: hidden;
+    position: relative;
+}
+
+.modal-header-green {
+    background-color: var(--sage);
+    color: var(--white);
+    padding: 40px 20px;
+}
+
+.modal-header-green h2 {
+    font-size: 3rem;
+    margin-top: 5px;
+}
+
+.modal-body-white {
+    padding: 30px 25px;
+    color: var(--dark-text);
+    text-align: center;
+}
+
+.section-title {
+    font-family: 'Playfair Display', serif;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 1rem;
+    margin: 25px 0 10px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 5px;
+}
+
+.close-btn {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 2rem;
+    color: var(--white);
+    cursor: pointer;
+}
+
+/* ==========================================================================
+   8. FOOTER
+   ========================================================================== */
+.wedding-footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: var(--sage);
+    color: var(--white);
+    padding: 15px 0;
+    text-align: center;
+    z-index: 100;
+}
+
+.wedding-footer .names {
+    font-size: 1.8rem;
+}
+
+.wedding-date {
+    font-size: 0.7rem;
+    letter-spacing: 2px;
+    margin-top: -5px;
+    opacity: 0.9;
+}
+
+
+/* --- ESTILOS INTERNOS DEL MODAL --- */
+
+.modal-header-green h2 {
+    font-family: 'Pinyon Script', cursive;
+    font-size: 3.8rem;
+    margin-top: -10px;
+    font-weight: 400;
+    text-transform: none;
+}
+
+.modal-body-white p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 25px;
+    color: #555;
+}
+
+.section-title {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 300;
+    font-size: 0.85rem;
+    letter-spacing: 3px;
+    color: #888;
+    margin: 30px 0 15px;
+    border-bottom: none;
+}
+
+.section-title::before,
+.section-title::after {
+    content: '';
+    flex: 1;
+    border-bottom: 1px solid #eee;
+}
+
+.section-title:not(:empty)::before {
+    margin-right: .5em;
+}
+
+.section-title:not(:empty)::after {
+    margin-left: .5em;
+}
+
+.itinerary-item {
+    margin-bottom: 20px;
+}
+
+.itinerary-item strong {
+    display: block;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    font-size: 0.9rem;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+.itinerary-item p {
+    font-size: 0.9rem;
+    margin: 0;
+    color: #666;
+}
+
+/* Enlace/Botón "Ver Ubicación" */
+.btn-link-modal {
+    display: inline-block;
+    margin-top: 15px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--sage);
+    text-decoration: none;
+    border-bottom: 1px solid var(--sage);
+    padding-bottom: 2px;
+    transition: opacity 0.3s;
+    letter-spacing: 1px;
+}
+
+.btn-link-modal:hover {
+    opacity: 0.7;
+}
+
+/* --- HEADER DEL MODAL CENTRADO --- */
+.modal-header-green {
+    background-color: var(--sage);
+    color: var(--white);
+    padding: 50px 20px;
+    /* Un poco más de aire arriba y abajo */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.modal-header-green h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.8rem;
+    letter-spacing: 4px;
+    /* Estilo elegante espaciado */
+    margin: 0;
+    font-weight: 300;
+}
+
+.modal-header-green h2 {
+    font-family: 'Pinyon Script', cursive;
+    /* Tu tipografía elegante */
+    font-size: 4rem;
+    margin: -10px 0 0 0;
+    /* Ajuste para que se pegue un poco al texto de arriba */
+    font-weight: 400;
+    text-transform: none;
+}
+
+/* Imagen 7: Superpuesta encima de todo (incluyendo la tarjeta de nombres) */
+.img-7 {
+    top: 25%;
+    right: 10%;
+    width: 40%;
+    height: 150px;
+    transform: rotate(-5deg);
+    z-index: 20;
+}
+
+
+/* --- CUENTA ATRÁS MINIMALISTA --- */
+.countdown-minimal {
+    margin-top: 40px;
+    border-top: 1px solid #eee;
+    padding-top: 20px;
+    text-align: center;
+}
+
+.countdown-label {
+    font-size: 0.65rem;
+    letter-spacing: 4px;
+    color: #bbb;
+    display: block;
+    margin-bottom: 10px;
+}
+
+#timer-modal {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 300;
+    font-size: 1rem;
+    color: var(--sage);
+    letter-spacing: 2px;
+}
+
+#timer-modal span {
+    font-weight: 600;
+}

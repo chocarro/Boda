@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nuestra Boda | Sarah & Alistair</title>
+<link href="https://fonts.googleapis.com/css2?family=Pinyon+Script&display=swap" rel="stylesheet">    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="collage-container">
+        <div class="item card-names" onclick="showInfo('portada')">
+            <p>SAVE THE DATE</p>
+            <h1>Sarah & Alistair</h1>
+            <p class="date">12 . 10 . 2026</p>
+        </div>
+
+        <div class="item img-card img-1">
+            <img src="Imagenes/5.png" alt="Boda 1">
+        </div>
+
+        <div class="item img-card img-2">
+            <img src="Imagenes/6.png" alt="Boda 2">
+        </div>
+        
+
+        <div class="item card-dress" onclick="showInfo('dresscode')">
+            <h2 class="card-title-ext">Dress Code</h2>
+            <p>Formal - Sage Green</p>
+        </div>
+
+        <div class="item img-card img-3">
+            <img src="Imagenes/1.png" alt="Boda 3">
+        </div>
+
+        <div class="item circle-btn" onclick="showInfo('detalles')">
+            <span>CLICK PARA VER LOS <br> <strong>DETALLES</strong></span>
+        </div>
+
+        <div class="item img-card img-7">
+    <img src="Imagenes/4.png" alt="Boda 7">
+</div>
+
+    </div>
+
+    <div id="modal" class="modal" onclick="closeInfo()">
+        <div class="modal-content wedding-page" onclick="event.stopPropagation()">
+            <span class="close-btn" onclick="closeInfo()">×</span>
+            <div id="modal-text"></div>
+        </div>
+    </div>
+
+    <footer class="wedding-footer">
+        <div class="names">Sarah & Alistair</div>
+        <div class="wedding-date">12 de Octubre, 2026</div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
