@@ -49,10 +49,11 @@ html {
    ========================================================================== */
 .collage-container {
     position: relative;
-    width: 100vw;
-    height: 100vh;
-    max-width: 450px;
+    width: 100%;
+    height: 100dvh; /* Usa dvh para evitar problemas con la barra de navegación en móviles */
+    max-width: 500px;
     margin: 0 auto;
+    overflow: hidden; /* Mantiene las decoraciones dentro de la pantalla */
 }
 
 /* Estilo base para cada pieza del collage */
@@ -450,6 +451,8 @@ html {
     z-index: 100; /* Por encima de las fotos, por debajo del modal */
     border-radius: 5px;
     box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    
+ 
 }
 
 .card-rsvp:active {
@@ -522,3 +525,26 @@ html {
 .itinerary-item:nth-child(3) { animation-delay: 0.4s; }
 .itinerary-item:nth-child(4) { animation-delay: 0.6s; }
 .itinerary-item:nth-child(5) { animation-delay: 0.8s; }
+
+/* --- MEDIA QUERIES PARA RESPONSIVE --- */
+
+/* Pantallas pequeñas (iPhone SE o similares) */
+@media (max-height: 700px) {
+    .card-names h1 { font-size: 2.8rem; }
+    .texto-bienvenida-cursivo { font-size: 1.5rem !important; }
+    .circle-btn { width: 120px; height: 120px; font-size: 0.7rem; }
+    .card-rsvp { bottom: 100px; padding: 8px 15px; }
+}
+
+/* Evitar que el collage se rompa en pantallas muy anchas (Escritorio) */
+@media (min-width: 600px) {
+    body, html {
+        overflow: auto; /* Permitimos scroll en escritorio si es necesario */
+    }
+    .collage-container {
+        height: 800px; /* Altura fija en desktop para mantener la proporción */
+        margin-top: 20px;
+        border-radius: 20px;
+        box-shadow: 0 0 50px rgba(0,0,0,0.1);
+    }
+}
